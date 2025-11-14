@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RaniHair - Premium Hair Care & Styling</title>
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="RaniHair - Premium Hair Care & Styling">
+    <meta property="og:description" content="Beautiful hair care for everyone. Specialized afro hair styling and general hair care products.">
+    <meta property="og:image" content="https://yourdomain.com/images/ranihair-preview.jpg">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:type" content="website">
+
+    <!-- Instagram specific -->
+    <meta property="instagram:card" content="summary_large_image">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,6 +29,7 @@
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="afro-hair.html">Afro Hair Styling</a></li>
                     <li><a href="general-hair.html">General Hair Care</a></li>
+                    <li><a href="gallery.html">Instagram Gallery</a></li>
                 </ul>
             </div>
         </nav>
@@ -78,15 +90,69 @@
                 </div>
             </div>
         </section>
+
+        <section class="instagram-section">
+            <div class="container">
+                <h2>Follow Us on Instagram</h2>
+                <p class="instagram-subtitle">See our latest styles, tips, and client transformations!</p>
+
+                <div class="instagram-handle">
+                    <a href="https://instagram.com/ranihair" target="_blank" class="instagram-link">
+                        <span class="instagram-icon">📸</span>
+                        @ranihair
+                    </a>
+                </div>
+
+                <div class="instagram-feed" id="instagram-feed">
+                    <!-- Instagram posts will be loaded here -->
+                    <div class="instagram-placeholder">
+                        <p>Loading Instagram posts...</p>
+                        <p class="instagram-cta">Or <a href="gallery.html">view our gallery</a></p>
+                    </div>
+                </div>
+
+                <div class="social-share">
+                    <h3>Share Our Website</h3>
+                    <div class="share-buttons">
+                        <button class="share-btn instagram-share" onclick="shareToInstagram()">
+                            📸 Share to Instagram Story
+                        </button>
+                        <button class="share-btn copy-link" onclick="copyLink()">
+                            🔗 Copy Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 RaniHair. All rights reserved.</p>
-            <p>Premium hair care for everyone</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>RaniHair</h4>
+                    <p>Premium hair care for everyone</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/ranihair" target="_blank" class="social-icon">📸 Instagram</a>
+                        <a href="https://facebook.com/ranihair" target="_blank" class="social-icon">📘 Facebook</a>
+                        <a href="https://twitter.com/ranihair" target="_blank" class="social-icon">🐦 Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="afro-hair.html">Afro Hair Styling</a><br>
+                    <a href="general-hair.html">General Hair Care</a><br>
+                    <a href="gallery.html">Instagram Gallery</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 RaniHair. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="instagram.js"></script>
 </body>
 </html>

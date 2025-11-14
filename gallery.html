@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Gallery - RaniHair</title>
+
+    <!-- Social Media Meta Tags -->
+    <meta property="og:title" content="RaniHair Instagram Gallery - Hair Styling Showcase">
+    <meta property="og:description" content="View our latest hair styling transformations, tips, and client results on Instagram.">
+    <meta property="og:image" content="https://yourdomain.com/images/ranihair-preview.jpg">
+    <meta property="og:url" content="https://yourdomain.com/gallery.html">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>RaniHair</h1>
+                    <p class="tagline">Beautiful Hair for Everyone</p>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="afro-hair.html">Afro Hair Styling</a></li>
+                    <li><a href="general-hair.html">General Hair Care</a></li>
+                    <li><a href="gallery.html" class="active">Instagram Gallery</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero gallery-hero">
+            <div class="container">
+                <h2>Instagram Gallery</h2>
+                <p>Explore our latest styles, transformations, and hair care tips</p>
+                <a href="https://instagram.com/ranihair" target="_blank" class="btn btn-primary">
+                    Follow @ranihair on Instagram
+                </a>
+            </div>
+        </section>
+
+        <section class="gallery-tools">
+            <div class="container">
+                <h2>Manage Your Instagram Integration</h2>
+                <div class="tools-grid">
+                    <div class="tool-card">
+                        <h3>📸 Add Instagram Post</h3>
+                        <p>Paste an Instagram post URL or embed code to add it to your gallery</p>
+                        <input type="text" id="instagram-url" placeholder="https://www.instagram.com/p/..." class="instagram-input">
+                        <button class="btn btn-small" onclick="addInstagramPost()">Add Post</button>
+                    </div>
+                    <div class="tool-card">
+                        <h3>🔗 Share to Instagram</h3>
+                        <p>Create a shareable link for your Instagram stories and posts</p>
+                        <button class="btn btn-small" onclick="generateShareLink()">Generate Share Link</button>
+                        <div id="share-link-output" class="output-box"></div>
+                    </div>
+                    <div class="tool-card">
+                        <h3>💾 Embed Code Generator</h3>
+                        <p>Get Instagram embed codes to add posts to your website</p>
+                        <textarea id="embed-code" placeholder="Paste embed code here..." class="embed-textarea" rows="4"></textarea>
+                        <button class="btn btn-small" onclick="processEmbedCode()">Process Embed</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="instagram-guide">
+            <div class="container">
+                <h2>How to Integrate Instagram Posts</h2>
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="step-number">1</div>
+                        <h4>Get Instagram Post URL</h4>
+                        <p>On Instagram, click the three dots on any post and select "Copy Link"</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">2</div>
+                        <h4>Get Embed Code (Optional)</h4>
+                        <p>Visit the Instagram post in browser, click "..." and select "Embed" to get the embed code</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">3</div>
+                        <h4>Add to Gallery</h4>
+                        <p>Paste the URL or embed code in the "Add Instagram Post" box above</p>
+                    </div>
+                    <div class="guide-step">
+                        <div class="step-number">4</div>
+                        <h4>Share Your Website</h4>
+                        <p>Use the share buttons to post your website content to Instagram stories</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="instagram-gallery-section">
+            <div class="container">
+                <h2>Your Instagram Posts</h2>
+                <div class="gallery-controls">
+                    <button class="btn btn-small" onclick="clearGallery()">Clear Gallery</button>
+                    <button class="btn btn-small" onclick="exportGallery()">Export Posts</button>
+                </div>
+                <div id="instagram-gallery" class="instagram-gallery-grid">
+                    <!-- Instagram posts will be added here dynamically -->
+                    <div class="gallery-placeholder">
+                        <h3>No posts yet!</h3>
+                        <p>Add your Instagram posts using the tools above to build your gallery.</p>
+                        <p class="placeholder-tip">💡 Tip: You can add posts by pasting Instagram URLs or embed codes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="instagram-tips">
+            <div class="container">
+                <h2>Instagram Integration Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>📱 Using Instagram App</h4>
+                        <p><strong>To share from app:</strong></p>
+                        <ul>
+                            <li>Open your post on Instagram</li>
+                            <li>Tap the paper airplane icon (Share)</li>
+                            <li>Select "Copy Link"</li>
+                            <li>Paste the link in the "Add Instagram Post" box above</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h4>💻 Using Web Browser</h4>
+                        <p><strong>To get embed code:</strong></p>
+                        <ul>
+                            <li>Open Instagram post in browser</li>
+                            <li>Click the three dots (...)</li>
+                            <li>Select "Embed"</li>
+                            <li>Copy the embed code</li>
+                            <li>Paste in the "Embed Code Generator" section</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h4>📤 Posting to Instagram Stories</h4>
+                        <p><strong>Share your website:</strong></p>
+                        <ul>
+                            <li>Click "Generate Share Link" button</li>
+                            <li>Copy the generated link</li>
+                            <li>Open Instagram and create a story</li>
+                            <li>Add a link sticker with your URL</li>
+                        </ul>
+                    </div>
+                    <div class="tip-card">
+                        <h4>🎨 Best Practices</h4>
+                        <p><strong>For better integration:</strong></p>
+                        <ul>
+                            <li>Use high-quality images on Instagram</li>
+                            <li>Tag posts with #RaniHair</li>
+                            <li>Update gallery regularly</li>
+                            <li>Engage with followers who share your posts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quick-actions">
+            <div class="container">
+                <h2>Quick Actions</h2>
+                <div class="quick-actions-grid">
+                    <button class="action-btn" onclick="shareCurrentPage()">
+                        📱 Share This Page to Instagram
+                    </button>
+                    <button class="action-btn" onclick="downloadGalleryData()">
+                        💾 Download Gallery Data
+                    </button>
+                    <button class="action-btn" onclick="openInstagramHelp()">
+                        ❓ Instagram API Help
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>RaniHair</h4>
+                    <p>Premium hair care for everyone</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="https://instagram.com/ranihair" target="_blank" class="social-icon">📸 Instagram</a>
+                        <a href="https://facebook.com/ranihair" target="_blank" class="social-icon">📘 Facebook</a>
+                        <a href="https://twitter.com/ranihair" target="_blank" class="social-icon">🐦 Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="afro-hair.html">Afro Hair Styling</a><br>
+                    <a href="general-hair.html">General Hair Care</a><br>
+                    <a href="gallery.html">Instagram Gallery</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 RaniHair. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="instagram.js"></script>
+</body>
+</html>
